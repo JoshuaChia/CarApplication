@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class CarDetailActivity extends AppCompatActivity {
 
+    TextView carBrandName;
 
 
     @Override
@@ -22,6 +23,13 @@ public class CarDetailActivity extends AppCompatActivity {
         TextView tvDesc = (TextView) findViewById(R.id.tvdesc);
         TextView tvprice = (TextView) findViewById(R.id.tvprice);
         TextView tvyear = (TextView) findViewById(R.id.tvyear);
+        carBrandName = findViewById(R.id.carBrandName);
+
+        // r u there?
+
+        String brandName = m.getName().substring(0, m.getName().indexOf(" "));
+
+        carBrandName.setText(brandName);
         tvName.setText(m.getName());
         tvDesc.setText(m.getDescription());
         tvprice.setText(m.getCost_price().toString());

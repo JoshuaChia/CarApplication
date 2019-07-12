@@ -28,6 +28,7 @@ public class CarActivity extends AppCompatActivity {
 
     ArrayAdapter <CarDetails>aa;
     ArrayList<CarDetails> alcar = new ArrayList<CarDetails>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class CarActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         Car g = (Car) i.getSerializableExtra("car");
+
         tvCar = findViewById(R.id.tvCar);
         lv = findViewById(R.id.lvCar);
 
@@ -42,11 +44,10 @@ public class CarActivity extends AppCompatActivity {
         aa = new ArrayAdapter<CarDetails>(this, android.R.layout.simple_list_item_1, alcar);
         lv.setAdapter(aa);
 
-
         RequestParams params = new RequestParams();
         params.add("id", String.valueOf(g.getId()));
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://10.0.2.2/CarApplication/getcardetailsbyID",params, new JsonHttpResponseHandler(){
+        client.post("http://10.0.2.2/CarApplication/getcardetailsbyID.php",params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -55,14 +56,8 @@ public class CarActivity extends AppCompatActivity {
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject car = (JSONObject)response.get(i);
                         CarDetails ab =  new CarDetails(car.getInt("idcardetails"),car.getString("name"),car.getString("release_year"),car.getString("cost_price"),car.getString("description"),car.getInt("idcarname"));
-//                        String title = (String) c.get
                         alcar.add(ab);
 
-                        Log.d("s",alcar.get(0).getDescription());
-                        Log.d("s",alcar.get(0).getName());
-                        Log.d("s",alcar.get(0).getCost_price().toString());
-                        Log.d("s",String.valueOf(alcar.get(0).getCost_price().toString()));
-                        Log.d("s",String.valueOf(alcar.get(0).getRelease_year()));
                     }
                     aa.notifyDataSetChanged();
 
@@ -73,9 +68,6 @@ public class CarActivity extends AppCompatActivity {
 
 
         });
-
-
-
 
         lv.setAdapter(aa);
 

@@ -3,36 +3,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name:"
-        android:textColor="@android:color/white" />
+        android:text="Brand name"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="#DCDCDC"
+        android:id="@+id/carBrandName"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car name"
+            android:textColor="#0000A0"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        >
 
     <TextView
-        android:id="@+id/tvyear"
+            android:id="@+id/tvyear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release year:"
+            android:textColor="@android:color/black"
+        android:textSize="20dp"/>
+
+
+        <TextView
+            android:id="@+id/tvyear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car release year"
+            android:textColor="#0000A0"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Release year:"
-        android:textColor="@android:color/white" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        >
+
 
     <TextView
-        android:id="@+id/tvprice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Price:"
-        android:textColor="@android:color/white" />
+            android:id="@+id/tvprice1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            android:textColor="@android:color/black"
+        android:textSize="20dp"/>
+
+
+        <TextView
+            android:id="@+id/tvprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price of car"
+            android:textColor="#0000A0"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"/>
+
+
+
+    </LinearLayout>
+
+
+
 
     <TextView
-        android:id="@+id/tvdesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Description:"
-        android:textColor="@android:color/white" />
+            android:id="@+id/tvdesc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/tvdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description of car"
+            android:textColor="#0000A0"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+
+
 
 
 </LinearLayout>
